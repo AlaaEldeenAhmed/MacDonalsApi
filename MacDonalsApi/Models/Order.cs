@@ -15,6 +15,11 @@ namespace MacDonalsApi.Models
         public DateTime OrderPlaced { get; set; }
         public bool isOrderCompleted { get; set; }
 
+        public ICollection<OrderDetail> orderDetails { get; set; }
+
+        public int OrderId { get; set; }
+        public Order order { get; set; }
+
 
     }
 }

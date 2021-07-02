@@ -17,6 +17,8 @@ namespace MacDonalsApi.Models
         public double Price { get; set; }
         public bool IsPopularProduct { get; set; }
 
+        public ICollection<OrderDetail> orderDetails { get; set; }
+        public ICollection<ShoppingCartItem> shoppingCartItems { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
