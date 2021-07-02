@@ -50,9 +50,6 @@ namespace MacDonalsApi.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("OrderPlaced")
                         .HasColumnType("datetime2");
 
@@ -62,20 +59,15 @@ namespace MacDonalsApi.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<bool>("isOrderCompleted")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("orderId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("orderId");
 
                     b.ToTable("orders");
                 });
@@ -198,15 +190,13 @@ namespace MacDonalsApi.Migrations
 
             modelBuilder.Entity("MacDonalsApi.Models.Order", b =>
                 {
-                    b.HasOne("MacDonalsApi.Models.User", null)
+                    b.HasOne("MacDonalsApi.Models.User", "user")
                         .WithMany("orders")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("MacDonalsApi.Models.Order", "order")
-                        .WithMany()
-                        .HasForeignKey("orderId");
-
-                    b.Navigation("order");
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("MacDonalsApi.Models.OrderDetail", b =>

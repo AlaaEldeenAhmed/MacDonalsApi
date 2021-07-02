@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MacDonalsApi.Migrations
 {
-    public partial class firstmigration : Migration
+    public partial class CreateDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -73,25 +73,17 @@ namespace MacDonalsApi.Migrations
                     OrderTotal = table.Column<double>(type: "float", nullable: false),
                     OrderPlaced = table.Column<DateTime>(type: "datetime2", nullable: false),
                     isOrderCompleted = table.Column<bool>(type: "bit", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    orderId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_orders_orders_orderId",
-                        column: x => x.orderId,
-                        principalTable: "orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
                         name: "FK_orders_users_UserId",
                         column: x => x.UserId,
                         principalTable: "users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -155,11 +147,6 @@ namespace MacDonalsApi.Migrations
                 name: "IX_orderDetails_ProductId",
                 table: "orderDetails",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_orders_orderId",
-                table: "orders",
-                column: "orderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_orders_UserId",
