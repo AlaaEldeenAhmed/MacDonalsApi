@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[1.0.1, )"
             },
+            "AspNetCore.ImageUploader": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.7, )"

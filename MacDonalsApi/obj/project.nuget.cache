@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kRDKIH4RlkNbs8qMDnLxxAqzmzn6Tqqpa54B+LUlNZrhFvm42LVo+QylLREO5nyJ91Z39EakijivXvj8+q66gg==",
+  "dgSpecHash": "fFsT0FASj4LPviluaJnx5G+MO0aBj/im/A7Z0BvTipY0NA0I7xxJbT1ZqlCFcJBWgo84vdM3Ow9kNkBbj2s2vA==",
   "success": true,
   "projectFilePath": "E:\\Web Api Projects For Test\\MacDonalsApi\\MacDonalsApi\\MacDonalsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alaaa\\.nuget\\packages\\aspnetcore.authentication.plugin\\1.0.1\\aspnetcore.authentication.plugin.1.0.1.nupkg.sha512",
+    "C:\\Users\\alaaa\\.nuget\\packages\\aspnetcore.imageuploader\\1.0.0\\aspnetcore.imageuploader.1.0.0.nupkg.sha512",
     "C:\\Users\\alaaa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alaaa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.7\\microsoft.aspnetcore.authentication.jwtbearer.5.0.7.nupkg.sha512",
     "C:\\Users\\alaaa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
