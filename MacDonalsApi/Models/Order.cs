@@ -17,8 +17,8 @@ namespace MacDonalsApi.Models
 
         public ICollection<OrderDetail> orderDetails { get; set; }
 
-        public int OrderId { get; set; }
-        public Order order { get; set; }
+        public int UserId { get; set; }
+        public User user { get; set; }
 
 
     }
